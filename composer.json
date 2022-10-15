@@ -1,0 +1,13 @@
+{
+    
+    "autoload": {
+        "psr-4":{
+            "MVC\\": "src/"
+    }
+},
+
+    "require":{
+    "larapack/dd":"1.0",
+    "symfony/var-dumper":"6.0.9"
+    }
+}
