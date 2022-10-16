@@ -14,4 +14,7 @@ return array(
     'MVC\\' => array($baseDir . '/src'),
     'GrahamCampbell\\ResultType\\' => array($vendorDir . '/graham-campbell/result-type/src'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
+    'Core\\' => array($baseDir . '/Core'),
+    'Config\\' => array($baseDir . '/Config'),
+    'App\\' => array($baseDir . '/App'),
 );

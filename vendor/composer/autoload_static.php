@@ -14,8 +14,19 @@ class ComposerStaticInit16a922378a11a841d0e8c8e242389d7b
         '0e423a14e27410a071e5d815d3ffc856' => __DIR__ . '/..' . '/larapack/dd/src/helper.php',
     );
 
-    public static $prefixLengthsPsr4 = array (
-        'S' => 
+    public static $prefixLengthsPsr4 = array
+    (
+        'C'=>
+            array (
+                'Core\\' => 5,
+                'Config\\' => 7,
+            ),
+        'A' =>
+            array (
+                'App\\' => 4,
+            ),
+
+        'S'=>
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -40,7 +51,21 @@ class ComposerStaticInit16a922378a11a841d0e8c8e242389d7b
         ),
     );
 
+
+
     public static $prefixDirsPsr4 = array (
+        'Core\\' =>
+            array (
+                0 => __DIR__ . '/../..' . '/Core',
+            ),
+        'Config\\' =>
+            array (
+                0 => __DIR__ . '/../..' . '/Config',
+            ),
+        'App\\' =>
+            array (
+                0 => __DIR__ . '/../..' . '/App',
+            ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
