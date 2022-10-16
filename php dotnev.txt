@@ -1,0 +1,6 @@
+1. Dowload composer
+2.https://github.com/vlucas/phpdotenv
+Це файл який остається під гітом. Завдяки ним можно вписувати дані входа в базу. Скачується через
+командну строку.
+3. Comand $composer du -o (renew composer)
+4.larapack dd - потрібен для кращого перегляду структури коду в системі
