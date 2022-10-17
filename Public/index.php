@@ -7,6 +7,6 @@ $dotenv->load();
 
 use Config\Config;
 
-Config::get('db.name');
+Config::get('db.host');
 
 /*dd (__File__);*/
