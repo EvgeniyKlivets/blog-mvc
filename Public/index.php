@@ -8,5 +8,7 @@ $dotenv->load();
 use Config\Config;
 
 Config::get('db.host');
+/*dd(Config::get('db.test')); - лож*/
+/*dd (Config::get('db.host.test'), Config::get('db.user'));*/
 
 /*dd (__File__);*/
