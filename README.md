@@ -1,3 +1,3 @@
 # blog-mvc
 
-We make a single entry point
+Here we create routers, controllers, models and PDO
