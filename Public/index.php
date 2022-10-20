@@ -1,23 +1,22 @@
 <?php
-/*Робимо єдину точку входа*/
-require_once dirname(__DIR__ ). '/vendor/autoload.php';
+/*Routs*/
+require_once dirname(__DIR__ ). '/Config/constants.php';
+require_once BASE_DIR .'/vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable(dirname(__DIR__));
 $dotenv->load();
 
-/*use Core\Model;
+try{
+    $router = new \Core\Router();
 
-dd(Model::connect()); при public*/
+    require_once BASE_DIR . '/routes/web.php';
 
-/*$query = Model:: connect()->query("SELECT*FROM users");
-$query->execute(); /*IT'S where SQL Database has*/
-//dd($query->fetchAll());
+    //dd($_SERVER['REQUEST_URI']);
 
+    if (!preg_match('/assets/i', $_SERVER['REQUEST_URI'])){
+        $router->dispatch($_SERVER['REQUEST_URI']);
+    }
+} catch (Exception $e) {
+    dd($e->getMessage());
+}
 
-
-/*use Config\Config;*/
-/*Config::get('db.test');*/
-/*dd(Config::get('db.test')); - лож*/
-/*dd (Config::get('db.host.test'), Config::get('db.user'));*/
-
-/*dd (__File__);*/
