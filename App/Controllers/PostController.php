@@ -4,8 +4,8 @@ namespace App\Controllers;
 
 class PostController
 {
-    public function show()
+  public function show( int $id)
     {
-
+        dd(__METHOD__, $id);
     }
 }
