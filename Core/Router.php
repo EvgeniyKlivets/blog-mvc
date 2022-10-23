@@ -75,7 +75,7 @@ class Router
     }
 
     protected function match(string $url)
-        //Щоб одне гкд попала в один з роутерів
+        //Щоб одне url попала в один з роутерів
     {
         //dd($this->routes);
         foreach ($this->routes as $route => $params){
