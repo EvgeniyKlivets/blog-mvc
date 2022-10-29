@@ -2,9 +2,9 @@
 
 namespace App\Controllers;
 
-use Core\Controller;
 
-class AuthController extends Controller
+
+class AuthController 
 {
     public function login()
     {
