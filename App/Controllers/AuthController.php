@@ -13,4 +13,14 @@ class AuthController
     {
 
     }
-}
+
+    public function verify()
+    {
+
+    }
+
+    public function store()
+    {
+        
+    }
+} 
