@@ -8,7 +8,8 @@ class AuthController extends Controller
 {
     public function login()
     {
-        dd(__METHOD__);
+        //dd(__METHOD__);
+        View:: render ('auth/login');
     }
 
     public function register ()
