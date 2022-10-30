@@ -4,7 +4,7 @@ namespace Core;
 
 abstract class Controller
 {
-    public function __call($name, $args)
+   /* public function __call($name, $args)
     {
         dd($args);
         if (method_exists($this, $name)){
@@ -13,7 +13,7 @@ abstract class Controller
                 $this->after();
             }
         }
-    }
+    }*/
 
     protected function before(): bool
     {
