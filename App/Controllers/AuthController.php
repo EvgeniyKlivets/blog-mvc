@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use Core\Controller;
+use Core\View;
 
 class AuthController extends Controller
 {
@@ -19,7 +20,7 @@ class AuthController extends Controller
 
     public function verify()
     {
-
+        dd($_REQUEST);
     }
 
     public function store()
