@@ -2,25 +2,20 @@
 
 namespace Core;
 
+use App\Helpers\SessionHelper;
+
 abstract class Controller
 {
-   /* public function __call($name, $args)
-    {
-        dd($args);
-        if (method_exists($this, $name)){
-            if ($this->before() !== false){
-                call_user_func_array([$this, $name], $args);
-                $this->after();
-            }
-        }
-    }*/
 
-    protected function before(): bool
+    protected function before(string $action): bool
     {
+        if (!SessionHelper:: isUserLoggedIn()){
+            redirect ('login');
+        }
         return true;
     }
 
-    protected function after()
+    protected function after (string $action)
     {
 
     }
