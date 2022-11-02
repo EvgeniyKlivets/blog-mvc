@@ -1,39 +1,28 @@
 <?php
-
 namespace App\Controllers;
-
+use App\Helpers\SessionHelper;
+use App\Validators\AuthValidator;
 use Core\Controller;
 use Core\View;
-
 class AuthController extends Controller
 {
     public function login()
     {
-        //dd(__METHOD__);
-        View:: render ('auth/login');
-    }
-
-    public function register ()
-    {
-
-    }
-
-    public function verify()
-    {
-        dd($_REQUEST);
-    }
-
-    public function store()
-    {
-
-    }
-
-    /*public function before(string $action):bool
-    {
-        if ($action === 'login'){
-            header('Location: localhost:8888');
-            exit;
+        if (SessionHelper::isUserLoggedIn()) {
+            redirect();
         }
-        return false;
-    }*/
-}
+        View::render('auth/login');
+    }
+    public function register()
+    {
+        if (SessionHelper::isUserLoggedIn()) {
+            redirect();
+        }
+        View::render('auth/register');
+    }
+
+    public function logout()
+    {
+        SessionHelper::destroy();
+        redirect();
+    }
