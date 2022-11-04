@@ -13,7 +13,9 @@ class Config
 
         return  self::findByKeys($keys, $configs);
 
-        
+        /*dd($configs);*/
+
+        /*dd($value);*/
     }
 
     private static function findByKeys(array $keys, array $configs): mixed
@@ -25,18 +27,11 @@ class Config
         }
         $key = array_shift($keys);
 
-       
+        /*dd($key, $keys);*/
 
         if (array_key_exists($key, $configs)) {
-            $value = is_array($configs[$key]) ? self::findByKeys($keys, $configs) :$configs[$key];
-            if (is_array($configs[$key])){
-                $value = self::findByKeys($keys, $configs [$key]);
-            }else{
-                $value = $configs[$key];
-            }
+            $value = is_array($configs[$key]) ? self::findByKeys($keys, $configs) : $configs[$key];
         }
-        
-
 
             return $value;
     }
