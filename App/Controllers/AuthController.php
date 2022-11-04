@@ -26,3 +26,19 @@ class AuthController extends Controller
         SessionHelper::destroy();
         redirect();
     }
+
+    public function verify()
+    {
+        $fields = filter_input_array(INPUT_POST, $_POST, 1);
+        $validator = new AuthValidator();
+        if ($validator->validate($fields) && $user = $validator->checkEmailOnExists($fields['email'])) {
+            if ($validator->verifyPassword($fields['password'], $user->password)) {
+                SessionHelper::setUserData($user->id);
+                redirect();
+            }
+        }
+        $this->data['data'] = $fields;
+        $this->data += $validator->getErrors();
+        View::render('auth/register', $this->data);
+    }
+}
