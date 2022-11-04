@@ -42,10 +42,10 @@ class Router
                     $controller = new $controller;
                     $action = $this->params['action'];
                     unset($this->params['action']);//delet action
-                    
-                     if ($controller->before()){
+
+                        if ($controller->before()){
                         call_user_func_array([$controller, $action], $this->params);
-                          $controller->after();
+                        $controller->after();
                         }
                 } else {
                     throw new \Exception("Action {$this->params['action']} not found");
